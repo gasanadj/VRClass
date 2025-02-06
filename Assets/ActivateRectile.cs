@@ -10,7 +10,7 @@ public class ActivateRectile : MonoBehaviour
     public InputActionProperty rightRectile;
 
     public GameObject left;
-    public GameObject right;
+    //public GameObject right;
 
     public XRRayInteractor leftRay;
     public XRRayInteractor rightRay;
@@ -25,8 +25,8 @@ public class ActivateRectile : MonoBehaviour
     void Update()
     {
         bool isHovering = leftRay.TryGetHitInfo(out Vector3 leftPos, out Vector3 leftNormal, out int leftNumber, out bool leftValid);
-        bool isHoveringR = leftRay.TryGetHitInfo(out Vector3 rightPos, out Vector3 rightNormal, out int rightNumber, out bool rightValid);
+        bool isHoveringR = rightRay.TryGetHitInfo(out Vector3 rightPos, out Vector3 rightNormal, out int rightNumber, out bool rightValid);
         left.SetActive(isHovering && leftRectile.action.ReadValue<float>() > 0.1f);
-        right.SetActive(isHoveringR && rightRectile.action.ReadValue<float>() > 0.1f);
+        //right.SetActive(isHoveringR && rightRectile.action.ReadValue<float>() > 0.1f);
     }
 }
