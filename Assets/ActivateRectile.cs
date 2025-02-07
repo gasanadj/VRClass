@@ -27,6 +27,6 @@ public class ActivateRectile : MonoBehaviour
         bool isHovering = leftRay.TryGetHitInfo(out Vector3 leftPos, out Vector3 leftNormal, out int leftNumber, out bool leftValid);
         bool isHoveringR = rightRay.TryGetHitInfo(out Vector3 rightPos, out Vector3 rightNormal, out int rightNumber, out bool rightValid);
         left.SetActive(isHovering && leftRectile.action.ReadValue<float>() > 0.1f);
-        //right.SetActive(isHoveringR && rightRectile.action.ReadValue<float>() > 0.1f);
+        // right.SetActive(isHoveringR && rightRectile.action.ReadValue<float>() > 0.1f);
     }
 }
